@@ -1,6 +1,7 @@
 remote_theme: "jekyll/minima"
 title: "cos-13"
-description: "物置き"
-
+description: ""
+author:
+  name: cos-13
 minima:
   hide_site_feed_link: true
