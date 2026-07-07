@@ -4,10 +4,7 @@
     margin:0;
     padding:0;
 }
-
-a{
-    text-decoration: none;
-}
+/*なぜかDOMで追加したやつにcssが効かない．js側で指定している*/
 
 html,body{
     height: 100%;
