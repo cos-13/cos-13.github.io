@@ -1,5 +1,13 @@
 document.title="cos-13｜"+document.title;/*タイトル自動設定 */
 
+
+//MathJax
+var script = document.createElement('script'); 
+script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"; //ファイルパス
+document.body.appendChild(script);
+
+
+
 const headercolor="lightgray";
 
 const he = document.getElementById("header");/*ヘッダーのelement */
@@ -13,11 +21,19 @@ home.setAttribute("style","text-decoration:none");
 home.setAttribute("href",location.origin);
 home.textContent = "cos-13 ";
 home.style.color="whitesmoke";
+if(location.pathname!="/"){
+    home.addEventListener("mouseover", ()=>{
+        home.style.fontWeight="600";
+    });
+    home.addEventListener("mouseleave", ()=>{
+        home.style.fontWeight="normal";
+    });
+}
 he.appendChild(home);
 
 function dainari(){ //>を出力するだけのカス関数
     const dai=document.createElement("a");
-    dai.textContent=">";
+    dai.textContent=" > ";
     dai.style.color=headercolor;
     
     dai.style.fontSize="12px";
@@ -47,6 +63,53 @@ for(const p of path){
     f.setAttribute("style","text-decoration:none");
     f.style.color=headercolor;
     f.style.fontSize="12px";
+    console.log(location.href);
+    if(npPath!=location.href&&npPath+"/"!=location.href){
+        f.addEventListener("mouseover", ()=>{
+            f.style.fontWeight="600";
+        });
+        f.addEventListener("mouseleave", ()=>{
+            f.style.fontWeight="normal";
+        });
+    }
     f.setAttribute("href",npPath);
     he.appendChild(f);
 }
+
+/*以上ヘッダー */
+/* 以下フッター*/
+
+const fo = document.getElementById("footer");
+const text = document.createElement("a");
+
+const bod=document.body;
+let mode = localStorage.getItem('mode');
+
+text.textContent="Dark" //Content
+if (mode === 'dark') {
+    bod.classList.add('dark');
+    text.textContent="Light"
+}
+
+text.style.color="lightgray";
+text.style.marginTop="5px";
+text.style.position="absolute";
+text.style.right="0px";
+text.style.fontSize="9pt";
+text.style.userSelect="none";
+
+
+text.onclick=()=>{
+    bod.classList.toggle("dark");
+    if (mode === 'normal') {
+        localStorage.setItem('mode', 'dark');
+        mode = 'dark';
+        text.textContent="Light"
+    } else {
+        localStorage.setItem('mode', 'normal');
+        mode = 'normal';
+        text.textContent="Dark"
+  }
+};
+
+fo.appendChild(text);

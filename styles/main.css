@@ -1,34 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Shippori+Mincho+B1:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
+
+@view-transition {
+    navigation: auto;
+}
+
+
+@keyframes fade-in-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+::view-transition-new(root) {
+  animation: fade-in-slide-up 0.4s ease-out;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 0.3s ease-in;
+}
+
+
 
 *{
     margin:0;
     padding:0;
 }
-/*なぜかDOMで追加したやつにcssが効かない．js側で指定している*/
-
-html,body{
-    height: 100%;
+/*header:なぜかDOMで追加したやつにcssが効かない．js側で指定している*/
+#subt{
+    font-size: 80%;
+    position: absolute;
+    right: 10px;
 }
 
 body{
+    position: relative;
     max-width: 1000px; /*最大横幅*/
     margin:auto;
     background-color: gray;
     font-family: "Times New Roman", "Noto Serif JP", serif;
     text-autospace: normal;
+    font-variant-ligatures: discretionary-ligatures;
 }
 
 main{
     padding: 10px;
     height: 100%;
+    min-height: 500px;
     background-color: whitesmoke;
     box-shadow:5px 5px 0px 0 rgb(10,10,10);
 }
 
+h1{
+    font-family: "Times New Roman","Shippori Mincho B1", serif;
+    font-size:200%;
+    font-weight: 500;
+}
+
+h2{
+    font-family: "EB Garamond", "Zen Kaku Gothic New", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size:120%;
+    font-weight: 600;
+}
+
+h3{
+    font-family: "EB Garamond", "Zen Kaku Gothic New", sans-serif;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 100%;
+    font-weight: 500;
+}
+
 p{
-    font-family: "Times New Roman", "Noto Serif JP", serif;
-    font-style: normal;
+    font-family: "Times New Roman", "Shippori Mincho B1" ,"Noto Serif JP", serif;
+    font-size:95%;
+    font-style: medium;
     text-align: justify; /*両端ぞろえ*/
+    text-justify: auto;
+    font-weight: normal;
     text-wrap: pretty;
-    text-indent: 1em;
+}
+
+header{
+    margin-left: 10px;
+}
+
+
+/*以下ダークモード追記分*/
+
+.dark{
+    background-color: #222222;
+}
+
+.dark main{
+    background-color: #333333;
+    
+    color:lightgray;
 }
