@@ -1,13 +1,5 @@
 document.title="cos-13｜"+document.title;/*タイトル自動設定 */
 
-
-//MathJax
-var script = document.createElement('script'); 
-script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"; //ファイルパス
-document.body.appendChild(script);
-
-
-
 const headercolor="lightgray";
 
 const he = document.getElementById("header");/*ヘッダーのelement */
@@ -32,7 +24,7 @@ if(location.pathname!="/"){
 he.appendChild(home);
 
 function dainari(){ //>を出力するだけのカス関数
-    const dai=document.createElement("a");
+    const dai=document.createElement("span");
     dai.textContent=" > ";
     dai.style.color=headercolor;
     
@@ -47,7 +39,7 @@ for(const p of path){
     dainari();
     const f = document.createElement("a");
 
-    const pPath = path.slice(0,i+1);
+    const pPath = path.slice(0, i+1);
     const npPath = location.origin + pPath.join('/');
     console.log(npPath);
 
@@ -64,7 +56,7 @@ for(const p of path){
     f.style.color=headercolor;
     f.style.fontSize="12px";
     console.log(location.href);
-    if(npPath!=location.href&&npPath+"/"!=location.href){
+    if(npPath!=location.href && npPath+"/"!=location.href){
         f.addEventListener("mouseover", ()=>{
             f.style.fontWeight="600";
         });
@@ -113,3 +105,8 @@ text.onclick=()=>{
 };
 
 fo.appendChild(text);
+
+//MathJax
+var script = document.createElement('script'); 
+script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"; //ファイルパス
+document.body.appendChild(script);
