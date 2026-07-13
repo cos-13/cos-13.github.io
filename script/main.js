@@ -1,12 +1,14 @@
 document.title="cos-13｜"+document.title;/*タイトル自動設定 */
 
 const headercolor="lightgray";
-
+const dispTree = true;
 const he = document.getElementById("header");/*ヘッダーのelement */
 
 
 const path = location.pathname.split("/");//pathは配列
 console.log(path);
+
+const lin = document.createElement("span");
 
 const home = document.createElement("a"); //ホームページだけ特別
 home.setAttribute("style","text-decoration:none");
@@ -21,17 +23,18 @@ if(location.pathname!="/"){
         home.style.fontWeight="normal";
     });
 }
-he.appendChild(home);
+lin.appendChild(home);
 
-function dainari(){ //>を出力するだけのカス関数
+function dainari(){ //>を出力するだけのカス関数 //引数を持つ関数化して組み込めば省略できる？
     const dai=document.createElement("span");
     dai.textContent=" > ";
     dai.style.color=headercolor;
     
     dai.style.fontSize="12px";
-    he.appendChild(dai);
+    lin.appendChild(dai);
 }
 
+if(dispTree){
 let i = -1;
 for(const p of path){
     i++;
@@ -42,7 +45,6 @@ for(const p of path){
     const pPath = path.slice(0, i+1);
     const npPath = location.origin + pPath.join('/');
     console.log(npPath);
-
     fetch(npPath)
     .then(response => {
         return response.text();
@@ -65,8 +67,10 @@ for(const p of path){
         });
     }
     f.setAttribute("href",npPath);
-    he.appendChild(f);
+    lin.appendChild(f);
 }
+}
+he.appendChild(lin);
 
 /*以上ヘッダー */
 /* 以下フッター*/

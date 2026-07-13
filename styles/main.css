@@ -91,12 +91,30 @@ p{
     font-weight: normal;
     text-wrap: pretty;
     font-feature-settings: "palt", on;
+    text-indent: 1em;
 }
 
+.dropcap{
+    font-size: 1.5em;
+}
+.en p{
+    text-indent: 2em;
+    margin-bottom: 0.2em;
+}
+/*
+.en > p:first-child{
+    margin-top: 30px;
+}*/
 #subt + p{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
+.letter{
+    padding-left:10%;
+    padding-right:10%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 main a{
     text-decoration: none;
     color:inherit;
