@@ -99,7 +99,7 @@ p{
         text-align: left;
     }
 }
-.en p{
+.en > p{
     text-indent: 2em;
     margin-bottom: 0.2em;
 }
@@ -112,16 +112,20 @@ p{
 }
 
 
-.dropcap{
+p.dropcap{
     text-indent: 0em;
 }
 
-.letter{
+p.letter{
+    text-indent: 0em;
     padding-left:10%;
     padding-right:10%;
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+
+
 main a{
     text-decoration: none;
     color:inherit;
