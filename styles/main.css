@@ -84,7 +84,7 @@ h3{
 
 p{
     font-family: "Times New Roman", "Shippori Mincho B1" ,"Noto Serif JP", serif;
-    font-size:95%;
+    font-size:100%;
     font-style: medium;
     text-align: justify; /*両端ぞろえ*/
     text-justify: auto;
@@ -93,9 +93,11 @@ p{
     font-feature-settings: "palt", on;
     text-indent: 1em;
 }
-
-.dropcap{
-    font-size: 1.5em;
+/* 画面幅が768px以下のときだけ適用 */
+@media screen and (max-width: 768px) {
+    p{
+        text-align: left;
+    }
 }
 .en p{
     text-indent: 2em;
@@ -107,6 +109,11 @@ p{
 }*/
 #subt + p{
     margin-top: 30px;
+}
+
+
+.dropcap{
+    text-indent: 0em;
 }
 
 .letter{
