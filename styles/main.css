@@ -46,7 +46,7 @@ body{
     max-width: 1000px; /*最大横幅*/
     margin:auto;
     background-color: gray;
-    font-family: "Times New Roman", "Noto Serif JP", serif;
+    font-family: "EB Garamond", "Times New Roman", "Noto Serif JP", serif;
     text-autospace: normal;
     font-variant-ligatures: discretionary-ligatures;
 }
@@ -61,9 +61,9 @@ main{
 
 h1{
     font-feature-settings: "palt",on;
-    font-family: "Times New Roman","hiragino-mincho-pron",serif;
+    font-family: "EB Garamond","Times New Roman","hiragino-mincho-pron",serif;
     font-size:200%;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 h2{
@@ -83,25 +83,26 @@ h3{
 }
 
 p{
-    font-family: "Times New Roman", "Shippori Mincho B1" ,"Noto Serif JP", serif;
+    font-family: "EB Garamond","Times New Roman", "Shippori Mincho B1" ,"Noto Serif JP", serif;
     font-size:100%;
     font-style: medium;
     text-align: justify; /*両端ぞろえ*/
     text-justify: auto;
     font-weight: normal;
     text-wrap: pretty;
-    font-feature-settings: "palt", on;
+    font-feature-settings: "palt","onum", on;
     text-indent: 1em;
 }
-/* 画面幅が768px以下のときだけ適用 */
+/* 画面幅が768px以下のときだけ適用 
 @media screen and (max-width: 768px) {
     p{
         text-align: left;
     }
-}
-.en > p{
+}*/
+:lang(en) > p{
+    color: red;
     text-indent: 2em;
-    margin-bottom: 0.2em;
+    /*margin-bottom: 0.2em;*/
 }
 /*
 .en > p:first-child{

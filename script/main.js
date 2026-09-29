@@ -26,7 +26,7 @@ if(location.pathname!="/"){
 lin.appendChild(home);
 
 function dainari(){ //>を出力するだけのカス関数 //引数を持つ関数化して組み込めば省略できる？
-    const dai=document.createElement("span");
+    const dai = document.createElement("span");
     dai.textContent=" > ";
     dai.style.color=headercolor;
     
@@ -95,7 +95,7 @@ text.style.fontSize="9pt";
 text.style.userSelect="none";
 
 
-text.onclick=()=>{
+text.onclick = () =>{
     bod.classList.toggle("dark");
     if (mode === 'normal') {
         localStorage.setItem('mode', 'dark');
